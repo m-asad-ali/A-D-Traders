@@ -8,6 +8,7 @@ import Cart from "./Cart";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const App = () => {
   const theme = {
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/singleproduct/id" element={<SingleProduct />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
+        <Footer />
       </Router>
     </ThemeProvider>
   );
