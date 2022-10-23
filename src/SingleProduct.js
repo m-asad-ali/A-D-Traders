@@ -6,6 +6,7 @@ import PageNavigation from "./components/PageNavigation";
 import MyImage from "./components/MyImage";
 import { Container } from "./styles/Container";
 import Star from "./components/Star";
+import AddToCart from "./components/AddToCart";
 // import FormatPrice from "./Helpers/FormatPrice";
 import { MdSecurity } from "react-icons/md";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
@@ -100,6 +101,7 @@ const SingleProduct = () => {
                 Brand :<span> {company} </span>
               </p>
             </div>
+            {stock > 0 && <AddToCart product={singleProduct} />}
           </div>
         </div>
       </Container>
