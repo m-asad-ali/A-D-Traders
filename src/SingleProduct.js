@@ -49,6 +49,7 @@ const SingleProduct = () => {
           {/* product Images  */}
           <div className="product_images">
             <MyImage imgs={image} />
+            {/* {console.log("Image", image)} */}
           </div>
 
           {/* product data  */}

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const MyImage = ({ imgs = [{ url: "" }] }) => {
-  const [mainImage, setMainImage] = useState(imgs[0]);
+// const MyImage = ({ imgs = [{ url: "" }] }) => {
+const MyImage = ({ imgs }) => {
+  // const [mainImage, setMainImage] = useState(img);
 
   return (
     <Wrapper>
@@ -20,12 +21,19 @@ const MyImage = ({ imgs = [{ url: "" }] }) => {
             </figure>
           );
         })} */}
+        <figure>
+          <img
+            src={imgs}
+            alt={"My Img"}
+            className="box-image--style"
+            // key={1}
+            // onClick={() => setMainImage(curElm)}
+          />
+        </figure>
       </div>
       {/* 2nd column  */}
 
-      <div className="main-screen">
-        <img src={mainImage.url} alt={mainImage.filename} />
-      </div>
+      {/* <div className="main-screen"></div> */}
     </Wrapper>
   );
 };
