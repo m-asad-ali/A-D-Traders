@@ -1,18 +1,17 @@
 import { useEffect } from "react";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
-import { useProductContext } from "./context/productcontext";
+import { useProductContext } from "./context/productcontex";
 import PageNavigation from "./components/PageNavigation";
 import MyImage from "./components/MyImage";
 import { Container } from "./styles/Container";
-import Star from "./components/Star";
-import AddToCart from "./components/AddToCart";
-// import FormatPrice from "./Helpers/FormatPrice";
+import FormatPrice from "./Helpers/FormatPrice";
 import { MdSecurity } from "react-icons/md";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
+import Star from "./components/Star";
+import AddToCart from "./components/AddToCart";
 
 const API = "https://api.pujakaitem.com/api/products";
-// const API = "https://fakestoreapi.com/products";
 
 const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =
@@ -55,9 +54,8 @@ const SingleProduct = () => {
           <div className="product-data">
             <h2>{name}</h2>
             <Star stars={stars} reviews={reviews} />
-            {/* pass rating object which has rate and count */}
 
-            {/* <p className="product-data-price">
+            <p className="product-data-price">
               MRP:
               <del>
                 <FormatPrice price={price + 250000} />
@@ -65,7 +63,7 @@ const SingleProduct = () => {
             </p>
             <p className="product-data-price product-data-real-price">
               Deal of the Day: <FormatPrice price={price} />
-            </p> */}
+            </p>
             <p>{description}</p>
             <div className="product-data-warranty">
               <div className="product-warranty-data">
@@ -80,7 +78,7 @@ const SingleProduct = () => {
 
               <div className="product-warranty-data">
                 <TbTruckDelivery className="warranty-icon" />
-                <p>A&D Delivered </p>
+                <p>Thapa Delivered </p>
               </div>
 
               <div className="product-warranty-data">
@@ -101,6 +99,7 @@ const SingleProduct = () => {
                 Brand :<span> {company} </span>
               </p>
             </div>
+            <hr />
             {stock > 0 && <AddToCart product={singleProduct} />}
           </div>
         </div>
@@ -113,16 +112,19 @@ const Wrapper = styled.section`
   .container {
     padding: 9rem 0;
   }
+
   .product_images {
     display: flex;
     align-items: center;
   }
+
   .product-data {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     gap: 2rem;
+
     .product-data-warranty {
       width: 100%;
       display: flex;
@@ -130,8 +132,10 @@ const Wrapper = styled.section`
       align-items: center;
       border-bottom: 1px solid #ccc;
       margin-bottom: 1rem;
+
       .product-warranty-data {
         text-align: center;
+
         .warranty-icon {
           background-color: rgba(220, 220, 220, 0.5);
           border-radius: 50%;
@@ -145,6 +149,7 @@ const Wrapper = styled.section`
         }
       }
     }
+
     .product-data-price {
       font-weight: bold;
     }
@@ -156,10 +161,12 @@ const Wrapper = styled.section`
       flex-direction: column;
       gap: 1rem;
       font-size: 1.8rem;
+
       span {
         font-weight: bold;
       }
     }
+
     hr {
       max-width: 100%;
       width: 90%;
@@ -168,11 +175,13 @@ const Wrapper = styled.section`
       color: red;
     }
   }
+
   .product-images {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .page_loading {
     font-size: 3.2rem;
     display: flex;

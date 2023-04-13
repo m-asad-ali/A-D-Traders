@@ -9,23 +9,24 @@ const HeroSection = ({ myData }) => {
     <Wrapper>
       <div className="container">
         <div className="grid grid-two-column">
-          <div className="hero-section">
-            <p>Welcome to</p>
-            <h1>{name}</h1>
+          <div className="hero-section-data">
+            <p className="intro-data">Welcome to </p>
+            <h1> {name} </h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
               atque temporibus veniam doloribus libero ad error omnis voluptates
               animi! Suscipit sapiente.
             </p>
             <NavLink>
-              <Button>Show Now</Button>
+              <Button>show now</Button>
             </NavLink>
           </div>
+          {/* our homepage image  */}
           <div className="hero-section-image">
             <figure>
               <img
                 src="images/hero.jpg"
-                alt="Hero Section Images"
+                alt="hero-section-photo"
                 className="img-style"
               />
             </figure>
@@ -38,22 +39,27 @@ const HeroSection = ({ myData }) => {
 
 const Wrapper = styled.section`
   padding: 12rem 0;
+
   img {
     min-width: 10rem;
     height: 10rem;
   }
+
   .hero-section-data {
     p {
       margin: 2rem 0;
     }
+
     h1 {
       text-transform: capitalize;
       font-weight: bold;
     }
+
     .intro-data {
       margin-bottom: 0;
     }
   }
+
   .hero-section-image {
     width: 100%;
     height: auto;
@@ -63,6 +69,7 @@ const Wrapper = styled.section`
   }
   figure {
     position: relative;
+
     &::after {
       content: "";
       width: 60%;
@@ -78,10 +85,12 @@ const Wrapper = styled.section`
     width: 100%;
     height: auto;
   }
+
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     .grid {
       gap: 10rem;
     }
+
     figure::after {
       content: "";
       width: 50%;
