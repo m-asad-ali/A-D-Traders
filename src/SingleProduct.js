@@ -11,7 +11,7 @@ import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import Star from "./components/Star";
 import AddToCart from "./components/AddToCart";
 
-const API = "https://api.pujakaitem.com/api/products";
+// const API = "https://api.pujakaitem.com/api/products";
 
 const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =
@@ -33,7 +33,8 @@ const SingleProduct = () => {
   } = singleProduct;
 
   useEffect(() => {
-    getSingleProduct(`${API}?id=${id}`);
+    // getSingleProduct(`${API}?id=${id}`);
+    getSingleProduct(id);
   }, []);
 
   if (isSingleLoading) {
@@ -50,7 +51,7 @@ const SingleProduct = () => {
             <MyImage imgs={image} />
           </div>
 
-          {/* product dAta  */}
+          {/* product data  */}
           <div className="product-data">
             <h2>{name}</h2>
             <Star stars={stars} reviews={reviews} />
