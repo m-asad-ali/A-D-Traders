@@ -3,15 +3,19 @@ import styled from "styled-components";
 import { useCartContext } from "../context/cart_context";
 import FormatPrice from "../Helpers/FormatPrice";
 
-const OrderConfirmation = ({ date, orderNumber }) => {
+const OrderConfirmation = () => {
   const { total_price, order_no } = useCartContext();
+
+  const date = new Date();
+  const options = { year: "numeric", month: "2-digit", day: "2-digit" };
+  const formattedDate = date.toLocaleDateString("en-US", options);
 
   return (
     <Wrapper>
       <div className="order-confirmation-card">
         <h2 className="intro-data">Order Confirmed</h2>
         <p className="order-number">Order Number: {order_no}</p>
-        <p className="order-date">Date: {date}</p>
+        <p className="order-date">Date: {formattedDate}</p>
         <p className="shipment-method">Shipment Method: Credit/Bank Card</p>
         <p className="total-amount">
           Total Amount: <FormatPrice price={total_price} />
