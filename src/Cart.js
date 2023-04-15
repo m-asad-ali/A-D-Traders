@@ -7,7 +7,7 @@ import OrderAmount from "./components/OrderAmount";
 // import { useAuth0 } from "@auth0/auth0-react";
 
 const Cart = () => {
-  const { cart, clearCart, setOrderNo } = useCartContext();
+  const { cart, clearCart } = useCartContext();
   // console.log("🚀 ~ file: Cart.js ~ line 6 ~ Cart ~ cart", cart);
 
   if (cart.length === 0) {
@@ -49,7 +49,7 @@ const Cart = () => {
           <div>
             <OrderAmount />
             <NavLink to="/checkout">
-              <Button onClick={setOrderNo}>Proceed Checkout</Button>
+              <Button>Proceed Checkout</Button>
             </NavLink>
           </div>
         </div>

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import OrderAmount from "./OrderAmount";
 import { Button } from "../styles/Button";
 import { NavLink } from "react-router-dom";
+import { Country, State, City } from "country-state-city";
 
 const CheckoutForm = () => {
   const [firstName, setFirstName] = useState("");
@@ -10,16 +11,29 @@ const CheckoutForm = () => {
   const [country, setCountry] = useState("");
   const [state, setState] = useState("");
   const [city, setCity] = useState("");
-  const [address, setAddress] = useState("");
+  const [stAddress, setStAddress] = useState(""); // street address
+  const [apAddress, setApAddress] = useState(""); // appartement address
   const [zipCode, setZipCode] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [orderNotes, setOrderNotes] = useState("");
-  const [orderNo, setOrderNo] = useState(1452);
+  const [allCountry, setAllCountry] = useState(Country.getAllCountries());
+  const [allState, setAllState] = useState(State.getStatesOfCountry(1));
+  const [allCity, setAllCity] = useState(City.getCitiesOfState(1));
 
   const handleSubmit = (event) => {
     event.preventDefault();
     // Your submit logic here
+  };
+
+  const selectCountry = (event) => {
+    setCountry(event.target.value);
+    setAllState(State.getStatesOfCountry(event.target.value));
+  };
+
+  const selectState = (event) => {
+    setState(event.target.value);
+    setAllCity(City.getCitiesOfState(country, event.target.value));
   };
 
   return (
@@ -33,6 +47,7 @@ const CheckoutForm = () => {
               id="firstName"
               type="text"
               value={firstName}
+              placeholder="First Name"
               onChange={(event) => setFirstName(event.target.value)}
               required
             />
@@ -43,6 +58,7 @@ const CheckoutForm = () => {
               id="lastName"
               type="text"
               value={lastName}
+              placeholder="last Name"
               onChange={(event) => setLastName(event.target.value)}
               required
             />
@@ -52,40 +68,30 @@ const CheckoutForm = () => {
             <select
               id="country"
               value={country}
-              onChange={(event) => setCountry(event.target.value)}
+              onChange={selectCountry}
               required
             >
               <option value="">Select a Country/Region</option>
-              <option value="USA">USA</option>
-              <option value="Canada">Canada</option>
-              {/* Add more countries as needed */}
+              {allCountry.map((getcountry, index) => (
+                <option value={getcountry.isoCode} key={index}>
+                  {getcountry.name}
+                </option>
+              ))}
             </select>
           </div>
+
           <div className="form-group">
             <label htmlFor="state">State/Province</label>
-            <select
-              id="state"
-              value={state}
-              onChange={(event) => setState(event.target.value)}
-              required
-            >
+            <select id="state" value={state} onChange={selectState} required>
               <option value="">Select a State/Province</option>
-              {country === "USA" && (
-                <>
-                  <option value="CA">California</option>
-                  <option value="NY">New York</option>
-                  {/* Add more states as needed */}
-                </>
-              )}
-              {country === "Canada" && (
-                <>
-                  <option value="BC">British Columbia</option>
-                  <option value="ON">Ontario</option>
-                  {/* Add more provinces as needed */}
-                </>
-              )}
+              {allState.map((getState, index) => (
+                <option value={getState.isoCode} key={index}>
+                  {getState.name}
+                </option>
+              ))}
             </select>
           </div>
+
           <div className="form-group">
             <label htmlFor="city">City</label>
             <select
@@ -95,97 +101,90 @@ const CheckoutForm = () => {
               required
             >
               <option value="">Select a City</option>
-              {state === "CA" && (
-                <>
-                  <option value="Los Angeles">Los Angeles</option>
-                  <option value="San Francisco">San Francisco</option>
-                  {/* Add more cities in California as needed */}
-                </>
-              )}
-              {state === "NY" && (
-                <>
-                  <option value="New York City">New York City</option>
-                  <option value="Albany">Albany</option>
-                  {/* Add more cities in New York as needed */}
-                </>
-              )}
-              {state === "BC" && (
-                <>
-                  <option value="Vancouver">Vancouver</option>
-                  <option value="Victoria">Victoria</option>
-                  {/* Add more cities in British Columbia as needed */}
-                </>
-              )}
-              {state === "ON" && (
-                <>
-                  <option value="Toronto">Toronto</option>
-                  <option value="Ottawa">Ottawa</option>
-                  {/* Add more cities in Ontario as needed */}
-                </>
-              )}
+              {allCity.map((getCity, index) => (
+                <option value={getCity.isoCode} key={index}>
+                  {getCity.name}
+                </option>
+              ))}{" "}
             </select>
           </div>
+
           <div className="form-group">
             <label htmlFor="address">Street Address</label>
             <input
-              id="address"
+              id="stAddress"
               type="text"
-              value={address}
-              onChange={(event) => setAddress(event.target.value)}
-              required
+              value={stAddress}
+              placeholder="House no and Street"
+              onChange={(event) => setStAddress(event.target.value)}
+              required="true"
+            />
+            <input
+              style={{ marginTop: "2rem" }}
+              id="apAddress"
+              type="text"
+              value={apAddress}
+              placeholder="Appartment, suite, unit etc. (optional)"
+              onChange={(event) => setApAddress(event.target.value)}
+              required="true"
             />
           </div>
+
           <div className="form-group">
             <label htmlFor="zipCode">ZIP/Postal Code</label>
             <input
               id="zipCode"
               type="text"
               value={zipCode}
+              placeholder="ZIP code Or Postal Code"
               onChange={(event) => setZipCode(event.target.value)}
               required
             />
           </div>
+
           <div className="form-group">
             <label htmlFor="phone">Phone Number</label>
             <input
               id="phone"
               type="tel"
               value={phone}
+              placeholder="Phone Number"
               onChange={(event) => setPhone(event.target.value)}
               required
             />
           </div>
+
           <div className="form-group">
             <label htmlFor="email">Email Address</label>
             <input
               id="email"
               type="email"
               value={email}
+              placeholder="Email Address"
               onChange={(event) => setEmail(event.target.value)}
               required
-            />
+            ></input>
           </div>
+
           <div className="form-group">
             <label htmlFor="orderNotes">Order Notes (Optional)</label>
             <textarea
               id="orderNotes"
               value={orderNotes}
+              placeholder="Notes about your order, e.g. special notes for delivery."
               onChange={(event) => setOrderNotes(event.target.value)}
               rows="4"
             />
           </div>
+          <input type="submit" value="Pay with Credit/Bank Card" />
         </form>
 
         <div>
           <OrderAmount />
           <NavLink to={"/orderconfirmed"}>
-            <Button onClick={() => setOrderNo(orderNo + 1)}>
-              Pay with Credit/Bank Card
-            </Button>
+            <Button>Pay</Button>
           </NavLink>
-          {/* <Button type="submit" onClick={}>Pay with Credit/Bank Card</Button> */}
         </div>
-        {/* order total_amount */}
       </div>
     </Wrapper>
   );
@@ -197,6 +196,7 @@ const Wrapper = styled.section`
   .container {
     display: flex;
     padding: 0px 50px;
+    width: 70%;
   }
 
   .checkout-form {
@@ -233,12 +233,13 @@ const Wrapper = styled.section`
     display: block;
     width: 100%;
     padding: 15px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #fff;
     color: #333;
     transition: border-color 0.2s ease-in-out;
+    height: 50px;
   }
 
   .form-group input:focus,
