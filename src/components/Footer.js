@@ -28,7 +28,6 @@ const Footer = () => {
           <div className="container grid grid-four-column">
             <div className="footer-about">
               <h3>A&D TRADERS</h3>
-              {/* <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p> */}
             </div>
             <div className="footer-subscribe">
               <h3>Subscribe to get important updates</h3>
@@ -62,8 +61,10 @@ const Footer = () => {
               </div>
             </div>
             <div className="footer-contact">
-              <h3>Call Us</h3>
+              <h3>Contact Us</h3>
               <h3>+1 (518) 768-0694</h3>
+              <h3>171 BAY 17TH ST APT B5 BROOKLYN, NY 11214</h3>
+              <h3>email</h3>
             </div>
           </div>
 
