@@ -1,39 +1,49 @@
 import styled from "styled-components";
+import doveLogo from "../assets/images/dove-logo-svg.svg";
+import farmasiLogo from "../assets/images/farmasi-logo.png";
+import headShoulderLogo from "../assets/images/Head-Shoulders-Logo.png";
+import morphoseLogo from "../assets/images/morphose-logo.jpg";
+import nuxeLogo from "../assets/images/NUXE-logo.jpg";
 
 const Trusted = () => {
   return (
     <Wrapper className="brand-section">
       <div className="container">
-        <h3>Trusted By 1000+ Companies</h3>
+        <h3>Brands</h3>
         <div className="brand-section-slider">
           {/* my 1st img  */}
           <div className="slide">
             <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image2.png"
+              src={doveLogo}
+              // src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image2.png"
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image3.png"
+              src={farmasiLogo}
+              // src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image3.png"
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image4.png"
+              src={headShoulderLogo}
+              // src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image4.png"
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image6.png"
+              src={morphoseLogo}
+              // src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image6.png"
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image8.png"
+              src={nuxeLogo}
+              // src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image8.png"
               alt="trusted-brands"
             />
           </div>

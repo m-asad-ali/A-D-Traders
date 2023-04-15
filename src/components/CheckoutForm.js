@@ -196,7 +196,6 @@ const Wrapper = styled.section`
   .container {
     display: flex;
     padding: 0px 50px;
-    width: 70%;
   }
 
   .checkout-form {
