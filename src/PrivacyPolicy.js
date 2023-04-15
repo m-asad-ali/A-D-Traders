@@ -119,16 +119,20 @@ const Wrapper = styled.div`
     margin-top: 50px;
     margin-bottom: 20px;
   }
-
+  /* 
   ul {
     margin-left: 30px;
     margin-bottom: 30px;
     font-size: 16px;
-  }
+  } */
 
-  p {
+  p,
+  ul {
     margin-bottom: 30px;
     line-height: 1.5;
+  }
+  li {
+    list-style-type: circle;
   }
 `;
 
