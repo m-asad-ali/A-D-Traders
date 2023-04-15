@@ -34,7 +34,6 @@ const Footer = () => {
               <h3>Subscribe to get important updates</h3>
               <form action="#">
                 <input type="email" name="email" placeholder="YOUR E-MAIL" />
-
                 <input type="submit" value="subscribe" />
               </form>
             </div>
@@ -50,7 +49,8 @@ const Footer = () => {
                 <div>
                   <a
                     href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
-                    target="_blank">
+                    target="_blank"
+                  >
                     <FaYoutube className="icons" />
                   </a>
                 </div>

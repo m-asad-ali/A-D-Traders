@@ -11,6 +11,7 @@ import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import CheckoutForm from "./components/CheckoutForm";
 
 const App = () => {
   const theme = {
@@ -50,6 +51,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/singleproduct/:id" element={<SingleProduct />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<CheckoutForm />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />

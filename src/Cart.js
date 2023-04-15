@@ -3,14 +3,12 @@ import { useCartContext } from "./context/cart_context";
 import CartItem from "./components/CartItem";
 import { NavLink } from "react-router-dom";
 import { Button } from "./styles/Button";
-import FormatPrice from "./Helpers/FormatPrice";
-import { useAuth0 } from "@auth0/auth0-react";
+import OrderAmount from "./components/OrderAmount";
+// import { useAuth0 } from "@auth0/auth0-react";
 
 const Cart = () => {
-  const { cart, clearCart, total_price, shipping_fee } = useCartContext();
+  const { cart, clearCart } = useCartContext();
   // console.log("🚀 ~ file: Cart.js ~ line 6 ~ Cart ~ cart", cart);
-
-  const { isAuthenticated, user } = useAuth0();
 
   if (cart.length === 0) {
     return (
@@ -23,13 +21,6 @@ const Cart = () => {
   return (
     <Wrapper>
       <div className="container">
-        {isAuthenticated && (
-          <div className="cart-user--profile">
-            <img src={user.profile} alt={user.name} />
-            <h2 className="cart-user--name">{user.name}</h2>
-          </div>
-        )}
-
         <div className="cart_heading grid grid-five-column">
           <p>Item</p>
           <p className="cart-hide">Price</p>
@@ -48,33 +39,18 @@ const Cart = () => {
           <NavLink to="/products">
             <Button> continue Shopping </Button>
           </NavLink>
+
           <Button className="btn btn-clear" onClick={clearCart}>
             clear cart
           </Button>
         </div>
-
         {/* order total_amount */}
-        <div className="order-total--amount">
-          <div className="order-total--subdata">
-            <div>
-              <p>subtotal:</p>
-              <p>
-                <FormatPrice price={total_price} />
-              </p>
-            </div>
-            <div>
-              <p>shipping fee:</p>
-              <p>
-                <FormatPrice price={shipping_fee} />
-              </p>
-            </div>
-            <hr />
-            <div>
-              <p>order total:</p>
-              <p>
-                <FormatPrice price={shipping_fee + total_price} />
-              </p>
-            </div>
+        <div className="subContainer">
+          <div>
+            <OrderAmount />
+            <NavLink to="/checkout">
+              <Button>Proceed Checkout</Button>
+            </NavLink>
           </div>
         </div>
       </div>
@@ -204,36 +180,9 @@ const Wrapper = styled.section`
     cursor: pointer;
   }
 
-  .order-total--amount {
-    width: 100%;
-    margin: 4.8rem 0;
-    text-transform: capitalize;
+  .subContainer {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-
-    .order-total--subdata {
-      border: 0.1rem solid #f0f0f0;
-      display: flex;
-      flex-direction: column;
-      gap: 1.8rem;
-      padding: 3.2rem;
-    }
-    div {
-      display: flex;
-      gap: 3.2rem;
-      justify-content: space-between;
-    }
-
-    div:last-child {
-      background-color: #fafafa;
-    }
-
-    div p:last-child {
-      font-weight: bold;
-      color: ${({ theme }) => theme.colors.heading};
-    }
+    justify-content: center;
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
@@ -249,22 +198,6 @@ const Wrapper = styled.section`
       display: flex;
       justify-content: space-between;
       gap: 2.2rem;
-    }
-
-    .order-total--amount {
-      width: 100%;
-      text-transform: capitalize;
-      justify-content: flex-start;
-      align-items: flex-start;
-
-      .order-total--subdata {
-        width: 100%;
-        border: 0.1rem solid #f0f0f0;
-        display: flex;
-        flex-direction: column;
-        gap: 1.8rem;
-        padding: 3.2rem;
-      }
     }
   }
 `;

@@ -11,6 +11,9 @@ const products = [
       "The mobile is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
     category: "mobile",
     featured: true,
+    stock: 10,
+    stars: 4.5,
+    reviews: 58,
   },
   {
     id: "thapaserialnob",
@@ -24,6 +27,7 @@ const products = [
       "The mobile is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
     category: "mobile",
     shipping: true,
+    stock: 10,
   },
   {
     id: "thapaserialnoc",
@@ -36,6 +40,7 @@ const products = [
     description:
       "The Laptop is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
     category: "laptop",
+    stock: 10,
   },
   // {
   //   id: "thapaserialnod",
@@ -49,6 +54,7 @@ const products = [
   //     "The mobile is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
   //   category: "mobile",
   //   shipping: true,
+  // stock: 10,
   // },
   {
     id: "thapaserialnoe",
@@ -62,6 +68,7 @@ const products = [
       "The Computer is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
     category: "computer",
     shipping: true,
+    stock: 10,
   },
   {
     id: "thapaserialnof",
@@ -75,6 +82,7 @@ const products = [
       "The Laptop is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
     category: "laptop",
     shipping: true,
+    stock: 10,
   },
   {
     id: "thapaserialnog",
@@ -88,6 +96,7 @@ const products = [
       "The laptop is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
     category: "laptop",
     shipping: true,
+    stock: 10,
   },
   {
     id: "thapaserialnoh",
@@ -102,6 +111,7 @@ const products = [
     category: "accessories",
     featured: true,
     shipping: true,
+    stock: 10,
   },
   {
     id: "thapaserialnoi",
@@ -115,6 +125,7 @@ const products = [
       "This watch is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
     category: "watch",
     shipping: true,
+    stock: 10,
   },
   {
     id: "thapaserialnoj",
@@ -127,6 +138,7 @@ const products = [
     description:
       "The mobile is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
     category: "accessories",
+    stock: 10,
   },
   {
     id: "thapaserialnok",
@@ -139,6 +151,7 @@ const products = [
     description:
       "This watch is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
     category: "watch",
+    stock: 10,
   },
   {
     id: "thapaserialnol",
@@ -152,6 +165,7 @@ const products = [
       "This watch is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
     category: "watch",
     featured: true,
+    stock: 10,
   },
 ];
 

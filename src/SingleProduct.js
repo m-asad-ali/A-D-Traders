@@ -70,7 +70,7 @@ const SingleProduct = () => {
             <div className="product-data-warranty">
               <div className="product-warranty-data">
                 <TbTruckDelivery className="warranty-icon" />
-                <p>Free Delivery</p>
+                <p>Fast Delivery</p>
               </div>
 
               <div className="product-warranty-data">
@@ -78,10 +78,10 @@ const SingleProduct = () => {
                 <p>30 Days Replacement</p>
               </div>
 
-              <div className="product-warranty-data">
+              {/* <div className="product-warranty-data">
                 <TbTruckDelivery className="warranty-icon" />
                 <p>Thapa Delivered </p>
-              </div>
+              </div> */}
 
               <div className="product-warranty-data">
                 <MdSecurity className="warranty-icon" />
@@ -93,6 +93,7 @@ const SingleProduct = () => {
               <p>
                 Available:
                 <span> {stock > 0 ? "In Stock" : "Not Available"}</span>
+                {console.log("Stock", stock)}
               </p>
               <p>
                 ID : <span> {id} </span>
