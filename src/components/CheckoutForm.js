@@ -2,6 +2,7 @@ import styled from "styled-components";
 import React, { useState } from "react";
 import OrderAmount from "./OrderAmount";
 import { Button } from "../styles/Button";
+import { NavLink } from "react-router-dom";
 
 const CheckoutForm = () => {
   const [firstName, setFirstName] = useState("");
@@ -14,6 +15,7 @@ const CheckoutForm = () => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [orderNotes, setOrderNotes] = useState("");
+  const [orderNo, setOrderNo] = useState(1452);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -176,7 +178,12 @@ const CheckoutForm = () => {
 
         <div>
           <OrderAmount />
-          <Button type="submit">Pay with Credit/Bank Card</Button>
+          <NavLink to={"/orderconfirmed"}>
+            <Button onClick={() => setOrderNo(orderNo + 1)}>
+              Pay with Credit/Bank Card
+            </Button>
+          </NavLink>
+          {/* <Button type="submit" onClick={}>Pay with Credit/Bank Card</Button> */}
         </div>
         {/* order total_amount */}
       </div>

@@ -12,6 +12,8 @@ import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CheckoutForm from "./components/CheckoutForm";
+import OrderAmount from "./components/OrderAmount";
+import OrderConfirmation from "./components/OrderConfirmation";
 
 const App = () => {
   const theme = {
@@ -52,6 +54,7 @@ const App = () => {
           <Route path="/singleproduct/:id" element={<SingleProduct />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<CheckoutForm />} />
+          <Route path="/orderconfirmed" element={<OrderConfirmation />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />
