@@ -11,7 +11,7 @@ const About = () => {
   return (
     <>
       {myName}
-      <HeroSection myData={data} />
+      <HeroSection myData={data} type="about" />
     </>
   );
 };
