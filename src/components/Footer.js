@@ -27,13 +27,18 @@ const Footer = () => {
         <footer>
           <div className="container grid grid-four-column">
             <div className="footer-about">
-              <h3>Thapa Technical</h3>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
+              <h3>A&D TRADERS</h3>
+              {/* <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p> */}
             </div>
             <div className="footer-subscribe">
               <h3>Subscribe to get important updates</h3>
               <form action="#">
-                <input type="email" name="email" placeholder="YOUR E-MAIL" />
+                <input
+                  style={{ "border-radius": "5px" }}
+                  type="email"
+                  name="email"
+                  placeholder="YOUR E-MAIL"
+                />
                 <input type="submit" value="subscribe" />
               </form>
             </div>
@@ -46,19 +51,19 @@ const Footer = () => {
                 <div>
                   <FaInstagram className="icons" />
                 </div>
-                <div>
+                {/* <div>
                   <a
                     href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
                     target="_blank"
                   >
                     <FaYoutube className="icons" />
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="footer-contact">
               <h3>Call Us</h3>
-              <h3>+91 12345678978</h3>
+              <h3>+1 (518) 768-0694</h3>
             </div>
           </div>
 
@@ -66,7 +71,7 @@ const Footer = () => {
             <hr />
             <div className="container grid grid-two-column ">
               <p>
-                @{new Date().getFullYear()} ThapaTechnical. All Rights Reserved
+                @{new Date().getFullYear()} A&D TRADERS. All Rights Reserved
               </p>
               <div>
                 <Link to="/privacy-policy">
