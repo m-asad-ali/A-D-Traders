@@ -176,11 +176,13 @@ const CheckoutForm = () => {
               rows="4"
             />
           </div>
+
           <input type="submit" value="Pay with Credit/Bank Card" />
         </form>
 
         <div>
           <OrderAmount />
+
           <NavLink to={"/orderconfirmed"}>
             <Button>Pay</Button>
           </NavLink>
