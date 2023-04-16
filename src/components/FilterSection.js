@@ -6,7 +6,7 @@ import { Button } from "../styles/Button";
 
 const FilterSection = () => {
   const {
-    filters: { text, category, color, price, maxPrice, minPrice },
+    filters: { text, category, price, maxPrice, minPrice },
     updateFilterValue,
     all_products,
     clearFilters,
@@ -29,8 +29,8 @@ const FilterSection = () => {
   // we need to have the individual data of each in an array format
   const categoryData = getUniqueData(all_products, "category");
   const companyData = getUniqueData(all_products, "company");
-  const colorsData = getUniqueData(all_products, "colors");
-  // console.log(
+  // const colorsData = getUniqueData(all_products, "colors");
+  //
   //   "🚀 ~ file: FilterSection.js ~ line 23 ~ FilterSection ~ companyData",
   //   colorsData
   // );
@@ -60,7 +60,8 @@ const FilterSection = () => {
                 name="category"
                 value={curElem}
                 className={curElem === category ? "active" : ""}
-                onClick={updateFilterValue}>
+                onClick={updateFilterValue}
+              >
                 {curElem}
               </button>
             );
@@ -76,7 +77,8 @@ const FilterSection = () => {
             name="company"
             id="company"
             className="filter-company--select"
-            onClick={updateFilterValue}>
+            onClick={updateFilterValue}
+          >
             {companyData.map((curElem, index) => {
               return (
                 <option key={index} value={curElem} name="company">
@@ -91,7 +93,7 @@ const FilterSection = () => {
       <div className="filter-colors colors">
         <h3>Colors</h3>
 
-        <div className="filter-color-style">
+        {/* <div className="filter-color-style">
           {colorsData.map((curColor, index) => {
             if (curColor === "all") {
               return (
@@ -101,7 +103,8 @@ const FilterSection = () => {
                   value={curColor}
                   name="color"
                   className="color-all--style"
-                  onClick={updateFilterValue}>
+                  onClick={updateFilterValue}
+                >
                   all
                 </button>
               );
@@ -114,12 +117,13 @@ const FilterSection = () => {
                 name="color"
                 style={{ backgroundColor: curColor }}
                 className={color === curColor ? "btnStyle active" : "btnStyle"}
-                onClick={updateFilterValue}>
+                onClick={updateFilterValue}
+              >
                 {color === curColor ? <FaCheck className="checkStyle" /> : null}
               </button>
             );
           })}
-        </div>
+        </div> */}
       </div>
 
       <div className="filter_price">

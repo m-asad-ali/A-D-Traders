@@ -31,12 +31,11 @@ const cartReducer = (state, action) => {
     } else {
       let cartProduct = {
         id: id + color,
-        name: product.name,
-        color,
+        name: product?.name,
         amount,
-        image: product.image[0].url,
-        price: product.price,
-        max: product.stock,
+        image: product?.image[0],
+        price: product?.price,
+        max: product?.stock,
       };
 
       return {

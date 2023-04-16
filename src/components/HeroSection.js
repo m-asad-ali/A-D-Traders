@@ -12,7 +12,7 @@ const HeroSection = ({ myData, type }) => {
           <div className="hero-section-data">
             <p className="intro-data">Welcome to</p>
             <h1> {name} </h1>
-            {type !== "about" ? (
+            {type !== "about" && (
               <>
                 <p>
                   we are an online retailer that offers a wide selection of
@@ -24,8 +24,6 @@ const HeroSection = ({ myData, type }) => {
                   <Button>show now</Button>
                 </NavLink>
               </>
-            ) : (
-              console.log("about")
             )}
           </div>
           {/* our homepage image  */}

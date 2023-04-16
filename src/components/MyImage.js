@@ -1,14 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 // const MyImage = ({ imgs = [{ url: "" }] }) => {
 const MyImage = ({ imgs }) => {
-  // const [mainImage, setMainImage] = useState(img);
+  const [mainImage, setMainImage] = useState(undefined);
+
+  useEffect(() => {
+    if (imgs !== undefined) {
+      setMainImage(imgs[0]);
+    }
+  }, [imgs]);
 
   return (
     <Wrapper>
       <div className="grid grid-four-column">
-        {/* {imgs.map((curElm, index) => {
+        {imgs?.map((curElm) => {
+          return (
+            <figure>
+              <img
+                src={curElm}
+                alt={"no"}
+                className="box-image--style"
+                // key={index}
+                onClick={() => setMainImage(curElm)}
+              />
+            </figure>
+          );
+        })}
+      </div>
+      {/* 2nd column  */}
+      <div className="main-screen">
+        <img src={mainImage} alt={mainImage?.filename} />
+      </div>
+      {/* <Wrapper>
+      <div className="grid grid-four-column">
+        {imgs.map((curElm, index) => {
           return (
             <figure>
               <img
@@ -20,7 +46,7 @@ const MyImage = ({ imgs }) => {
               />
             </figure>
           );
-        })} */}
+        })}
         <figure>
           <img
             src={imgs}
@@ -32,8 +58,8 @@ const MyImage = ({ imgs }) => {
         </figure>
       </div>
       {/* 2nd column  */}
-
       {/* <div className="main-screen"></div> */}
+      {/* // </Wrapper> } */}
     </Wrapper>
   );
 };

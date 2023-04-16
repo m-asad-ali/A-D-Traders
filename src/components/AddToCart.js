@@ -9,9 +9,9 @@ import { useCartContext } from "../context/cart_context";
 const AddToCart = ({ product }) => {
   const { addToCart } = useCartContext();
 
-  const { id, colors, stock } = product;
+  const { id, stock } = product;
 
-  const [color, setColor] = useState(colors[0]);
+  // const [color, setColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
 
   const setDecrease = () => {
@@ -25,7 +25,7 @@ const AddToCart = ({ product }) => {
   return (
     <Wrapper>
       <div className="colors">
-        <p>
+        {/* <p>
           Color:
           {colors.map((curColor, index) => {
             return (
@@ -33,12 +33,13 @@ const AddToCart = ({ product }) => {
                 key={index}
                 style={{ backgroundColor: curColor }}
                 className={color === curColor ? "btnStyle active" : "btnStyle"}
-                onClick={() => setColor(curColor)}>
+                onClick={() => setColor(curColor)}
+              >
                 {color === curColor ? <FaCheck className="checkStyle" /> : null}
               </button>
             );
           })}
-        </p>
+        </p> */}
       </div>
 
       {/* add to cart  */}
@@ -48,7 +49,9 @@ const AddToCart = ({ product }) => {
         setIncrease={setIncrease}
       />
 
-      <NavLink to="/cart" onClick={() => addToCart(id, color, amount, product)}>
+      {console.log(id, amount, product)}
+      {/* <NavLink to="/cart"> */}
+      <NavLink to="/cart" onClick={() => addToCart(id, amount, product)}>
         <Button className="btn">Add To Cart</Button>
       </NavLink>
     </Wrapper>

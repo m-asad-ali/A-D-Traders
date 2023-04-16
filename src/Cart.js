@@ -8,7 +8,7 @@ import OrderAmount from "./components/OrderAmount";
 
 const Cart = () => {
   const { cart, clearCart } = useCartContext();
-  // console.log("🚀 ~ file: Cart.js ~ line 6 ~ Cart ~ cart", cart);
+  //
 
   if (cart.length === 0) {
     return (

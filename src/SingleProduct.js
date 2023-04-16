@@ -43,13 +43,17 @@ const SingleProduct = () => {
 
   return (
     <Wrapper>
+      {/* {getSingleProduct(id)} */}
       <PageNavigation title={name} />
+      {console.log("name", name)}
+      {/* {console.log("ID", id)} */}
+      {console.log("Single Product", singleProduct)}
       <Container className="container">
         <div className="grid grid-two-column">
           {/* product Images  */}
           <div className="product_images">
             <MyImage imgs={image} />
-            {/* {console.log("Image", image)} */}
+            {/* <img src={image[0]} alt={"no"} /> */}
           </div>
 
           {/* product data  */}
@@ -93,7 +97,7 @@ const SingleProduct = () => {
               <p>
                 Available:
                 <span> {stock > 0 ? "In Stock" : "Not Available"}</span>
-                {console.log("Stock", stock)}
+                {/* {console.log("Stock", stock)} */}
               </p>
               <p>
                 ID : <span> {id} </span>
