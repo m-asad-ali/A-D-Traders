@@ -30,6 +30,7 @@ const SingleProduct = () => {
     stars,
     reviews,
     image,
+    size,
   } = singleProduct;
 
   useEffect(() => {
@@ -43,17 +44,14 @@ const SingleProduct = () => {
 
   return (
     <Wrapper>
-      {/* {getSingleProduct(id)} */}
       <PageNavigation title={name} />
       {console.log("name", name)}
-      {/* {console.log("ID", id)} */}
       {console.log("Single Product", singleProduct)}
       <Container className="container">
         <div className="grid grid-two-column">
           {/* product Images  */}
           <div className="product_images">
             <MyImage imgs={image} />
-            {/* <img src={image[0]} alt={"no"} /> */}
           </div>
 
           {/* product data  */}
@@ -79,11 +77,6 @@ const SingleProduct = () => {
                 <p>7 Days Replacement</p>
               </div>
 
-              {/* <div className="product-warranty-data">
-                <TbTruckDelivery className="warranty-icon" />
-                <p>Thapa Delivered </p>
-              </div> */}
-
               <div className="product-warranty-data">
                 <MdSecurity className="warranty-icon" />
                 <p>1 Year Warranty </p>
@@ -97,10 +90,18 @@ const SingleProduct = () => {
                 {/* {console.log("Stock", stock)} */}
               </p>
               <p>
-                ID : <span> {id} </span>
+                Category :{" "}
+                <span style={{ textTransform: "capitalize" }}>
+                  {" "}
+                  {category}{" "}
+                </span>
               </p>
               <p>
-                Brand :<span> {company} </span>
+                Size : <span> {size} </span>
+              </p>
+              <p>
+                Brand :
+                <span style={{ textTransform: "capitalize" }}> {company} </span>
               </p>
             </div>
             <hr />

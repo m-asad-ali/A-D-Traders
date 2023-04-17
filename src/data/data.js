@@ -43,7 +43,7 @@ const products = [
     name: "Nuxe Huile ‘Prodigieuse Or’ Multi Usage Dry Oil Golden Shimmer",
     company: "Nuxe",
     price: 38,
-    size: ["50ml", "100ml"],
+    size: ["50ml"],
     image: [img1_1, img1_2],
     description:
       "The Nuxe Shimmering Dry Oil Huile Prodigieuse is a luxurious body oil that provides a shimmering effect to the skin. It's designed to nourish and hydrate the skin, leaving it soft, smooth, and radiant. The oil is formulated with a blend of six precious plant oils, including macadamia, hazelnut, and argan oil, that work together to deeply moisturize the skin without leaving it feeling greasy. Additionally, the oil has a subtle floral scent that is both refreshing and calming. It's suitable for all skin types and can be used on the face, body, and hair. Overall, this dry oil is an excellent choice for anyone looking to add a touch of luxury to their beauty routine while simultaneously nourishing and hydrating their skin.",
@@ -58,7 +58,7 @@ const products = [
     name: "Nuxe Huile Prodigieuse Florale Multi-Purpose Dry Oil",
     company: "Nuxe",
     price: 52,
-    size: ["50ml", "100ml"],
+    size: ["50ml"],
     image: [img2_1, img2_2],
     description:
       "The Nuxe Huile Prodigieuse Florale Multi-Purpose Dry Oil is a luxurious and versatile beauty product that can be used on the face, body, and hair. It's a dry oil formula that is quickly absorbed into the skin and doesn't leave any greasy residue. This version of the oil has a delicate floral scent that is both refreshing and soothing. The oil is made with a blend of six precious plant oils, including macadamia, hazelnut, and argan oil, that work together to deeply nourish and hydrate the skin. It's suitable for all skin types, including sensitive skin. This 1.6 oz bottle is perfect for travel or for testing out the product before committing to a larger size. Overall, this multi-purpose dry oil is an excellent choice for anyone looking for a luxurious and effective beauty product that can be used for a variety of purposes.",
@@ -109,7 +109,7 @@ const products = [
     image: [img5_1, img5_2],
     description:
       "The Head and Shoulders Deep Moisture 2-in-1 Dandruff Shampoo and Conditioner is a moisturizing formula that helps to relieve scalp dryness and itchiness while also fighting dandruff. The formula is pH balanced and gentle enough for daily use. This 12.8 oz bottle is perfect for those who want the convenience of a 2-in-1 product and a lasting supply.",
-    category: "",
+    category: "Hair Care",
     stars: 4.6,
     reviews: 33,
     stock: 10,
@@ -137,7 +137,8 @@ const products = [
     name: "Kerastase Densifique Bain Densite Shampoo",
     company: "Kerastase",
     price: 35,
-    size: ["8.5 fl. oz.", "34 fl. oz."],
+    // size: ["8.5 fl. oz.", "34 fl. oz."],
+    size: ["8.5 fl. oz."],
     image: [img7_1, img7_2],
     description:
       "Kerastase Densifique Bain Densite Shampoo is a bodifying shampoo that helps to add density and fullness to thinning hair. It contains a combination of Hyaluronic Acid, Gluco-Peptide, and Ceramides to strengthen and hydrate hair while improving its texture and appearance. This shampoo is suitable for all hair types and can be used daily to leave hair looking thicker, fuller, and more voluminous.",
@@ -252,6 +253,7 @@ const products = [
     image: [img14_1, img14_2],
     description:
       "This product is a hair serum made with garlic oil, which is known for its beneficial properties for hair growth and health. It helps nourish and strengthen hair follicles, leading to thicker and healthier hair. It also helps to prevent hair loss and breakage, leaving hair feeling revitalized and soft. The serum is easy to apply and can be used on damp or dry hair. It is suitable for all hair types and is free from parabens, sulfates, and silicones.",
+    category: "hair care",
     stars: 4.7,
     reviews: 14,
     stock: 10,
