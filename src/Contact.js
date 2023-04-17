@@ -2,6 +2,7 @@
 import styled from "styled-components";
 
 const Contact = () => {
+  window.scrollTo(0, 0);
   // const { isAuthenticated, user } = useAuth0();
 
   const Wrapper = styled.section`

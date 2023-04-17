@@ -1,14 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { useEffect } from "react";
 
 const PrivacyPolicy = () => {
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, []);
+  window.scrollTo(0, 0);
+  // window.scrollTo({ top: 0, left: 0 });
 
   return (
     <Wrapper>

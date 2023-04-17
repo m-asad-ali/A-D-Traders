@@ -8,6 +8,11 @@ const Home = () => {
     name: "A&D Traders",
   };
 
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+
   return (
     <>
       <HeroSection myData={data} />

@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import doveLogo from "../assets/images/dove-logo-svg.svg";
-import farmasiLogo from "../assets/images/farmasi-logo.png";
-import headShoulderLogo from "../assets/images/Head-Shoulders-Logo.png";
-import morphoseLogo from "../assets/images/morphose-logo.jpg";
-import nuxeLogo from "../assets/images/NUXE-logo.jpg";
+import doveLogo from "../assets/companiesImages/dove-logo-svg.svg";
+import farmasiLogo from "../assets/companiesImages/farmasi-logo.png";
+import headShoulderLogo from "../assets/companiesImages/Head-Shoulders-Logo.png";
+import morphoseLogo from "../assets/companiesImages/morphose-logo.jpg";
+import nuxeLogo from "../assets/companiesImages/NUXE-logo.jpg";
 
 const Trusted = () => {
   return (

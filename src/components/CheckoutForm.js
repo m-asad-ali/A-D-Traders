@@ -5,10 +5,10 @@ import OrderAmount from "./OrderAmount";
 import { Button } from "../styles/Button";
 import { NavLink } from "react-router-dom";
 import { Country, State, City } from "country-state-city";
-import { clear } from "@testing-library/user-event/dist/clear";
 
 const CheckoutForm = () => {
-  const [canPay, setCanPay] = useState(false); // to check if the form is filled, make it true if yor are testing
+  window.scrollTo(0, 0);
+  const [canPay, setCanPay] = useState(true); // to check if the form is filled, make it false when deploy
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [country, setCountry] = useState("");

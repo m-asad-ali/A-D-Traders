@@ -7,6 +7,8 @@ import OrderAmount from "./components/OrderAmount";
 // import { useAuth0 } from "@auth0/auth0-react";
 
 const Cart = () => {
+  window.scrollTo(0, 0);
+
   const { cart, clearCart } = useCartContext();
   //
 

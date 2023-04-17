@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Button } from "./styles/Button";
 
 const ErrorPage = () => {
+  window.scrollTo(0, 0);
   return (
     <Wrapper>
       <div className="container">

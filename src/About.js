@@ -4,14 +4,8 @@ import { useEffect } from "react";
 import AboutData from "./components/AboutData";
 
 const About = () => {
+  window.scrollTo(0, 0);
   const { myName } = useProductContext();
-
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, []);
 
   const data = {
     name: "A&D Traders",

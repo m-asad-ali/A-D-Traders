@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Button } from "../styles/Button";
 import { FaDiscord, FaInstagram } from "react-icons/fa";
 
@@ -75,10 +75,10 @@ const Footer = () => {
                 @{new Date().getFullYear()} A&D TRADERS. All Rights Reserved
               </p>
               <div>
-                <Link to="/privacy-policy">
+                <NavLink to="/privacy-policy">
                   <p>PRIVACY POLICY</p>
                   <p>TERMS & CONDITIONS</p>
-                </Link>
+                </NavLink>
               </div>
             </div>
           </div>
