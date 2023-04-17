@@ -1,11 +1,14 @@
-import styled from "styled-components";
 import React, { useState } from "react";
+import { useCartContext } from "../context/cart_context";
+import styled from "styled-components";
 import OrderAmount from "./OrderAmount";
 import { Button } from "../styles/Button";
 import { NavLink } from "react-router-dom";
 import { Country, State, City } from "country-state-city";
+import { clear } from "@testing-library/user-event/dist/clear";
 
 const CheckoutForm = () => {
+  const [canPay, setCanPay] = useState(false); // to check if the form is filled, make it true if yor are testing
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [country, setCountry] = useState("");
@@ -21,9 +24,17 @@ const CheckoutForm = () => {
   const [allState, setAllState] = useState(State.getStatesOfCountry(1));
   const [allCity, setAllCity] = useState(City.getCitiesOfState(1));
 
+  const { clearCart } = useCartContext();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     // Your submit logic here
+    setCanPay(true);
+  };
+
+  const handlePayment = (event) => {
+    console.log("Payment");
+    clearCart();
   };
 
   const selectCountry = (event) => {
@@ -177,15 +188,16 @@ const CheckoutForm = () => {
             />
           </div>
 
-          <input type="submit" value="Pay with Credit/Bank Card" />
+          <input type="submit" value="Submit" />
         </form>
 
         <div>
           <OrderAmount />
-
-          <NavLink to={"/orderconfirmed"}>
-            <Button>Pay</Button>
-          </NavLink>
+          {canPay && (
+            <NavLink to={"/orderconfirmed"}>
+              <Button onClick={handlePayment}>Pay with Credit/Bank Card</Button>
+            </NavLink>
+          )}
         </div>
       </div>
     </Wrapper>
