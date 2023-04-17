@@ -64,7 +64,7 @@ const Footer = () => {
               <h3>Contact Us</h3>
               <h3>+1 (518) 768-0694</h3>
               <h3>171 BAY 17TH ST APT B5 BROOKLYN, NY 11214</h3>
-              <h3>email</h3>
+              <h3>[EMAIL HERE]</h3>
             </div>
           </div>
 

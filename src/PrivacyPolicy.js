@@ -1,13 +1,21 @@
 import React from "react";
 import styled from "styled-components";
+import { useEffect } from "react";
 
 const PrivacyPolicy = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
   return (
     <Wrapper>
       <div className="privacy-policy">
         <h1 className="intro-data">Privacy Policy</h1>
         <p>
-          At [Website Name], we respect your privacy and are committed to
+          At A&D Traders, we respect your privacy and are committed to
           protecting your personal information. This privacy policy explains how
           we collect, use, and protect your personal information when you use
           our website.
