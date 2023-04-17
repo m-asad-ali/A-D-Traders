@@ -33,7 +33,7 @@ const Footer = () => {
               <h3>Subscribe to get important updates</h3>
               <form action="#">
                 <input
-                  style={{ "border-radius": "5px" }}
+                  style={{ "border-radius": "5px", marginRight: "1rem" }}
                   type="email"
                   name="email"
                   placeholder="YOUR E-MAIL"

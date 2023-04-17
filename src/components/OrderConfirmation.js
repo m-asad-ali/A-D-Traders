@@ -18,7 +18,7 @@ const OrderConfirmation = () => {
         <p className="shipment-method">Shipment Method: Credit/Bank Card</p>
         <p className="total-amount">
           {/* Total Amount: <FormatPrice price={total_price} /> */}
-          Total Amount: {total_price}
+          Total Amount: ${total_price}
         </p>
       </div>
     </Wrapper>

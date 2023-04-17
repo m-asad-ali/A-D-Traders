@@ -12,22 +12,21 @@ const OrderAmount = () => {
           <div>
             <p>subtotal:</p>
             <p>
-              {/* <FormatPrice price={total_price} /> */}
+              {/* <FormatPrice price={total_price} /> */}$
               {total_price.toFixed(2)}
             </p>
           </div>
           <div>
             <p>shipping fee:</p>
             <p>
-              {/* <FormatPrice price={shipping_fee} /> */}
-              {shipping_fee}
+              {/* <FormatPrice price={shipping_fee} /> */}${shipping_fee}
             </p>
           </div>
           <hr />
           <div>
             <p>order total:</p>
             <p>
-              {/* <FormatPrice price={shipping_fee + total_price} /> */}
+              {/* <FormatPrice price={shipping_fee + total_price} /> */}$
               {shipping_fee + total_price}
             </p>
           </div>

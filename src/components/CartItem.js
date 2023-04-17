@@ -43,8 +43,7 @@ const CartItem = ({ id, name, image, color, price, amount }) => {
       {/* //Subtotal */}
       <div className="cart-hide">
         <p>
-          {/* <FormatPrice price={price * amount} /> */}
-          {price * amount}
+          {/* <FormatPrice price={price * amount} /> */}${price * amount}
         </p>
       </div>
 
