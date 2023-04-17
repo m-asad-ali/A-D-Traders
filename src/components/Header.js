@@ -2,19 +2,20 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Nav from "./Nav";
+import logo from "../assets/logo.png";
 
 const Header = () => {
   return (
-    <MainHeader>
+    <Wrapper>
       <NavLink to="/">
-        <img src="./images/logo.png" alt="my logo img" />
+        <img className="logo" src={logo} alt="my logo" />
       </NavLink>
       <Nav />
-    </MainHeader>
+    </Wrapper>
   );
 };
 
-const MainHeader = styled.header`
+const Wrapper = styled.header`
   padding: 0 4.8rem;
   height: 10rem;
   background-color: ${({ theme }) => theme.colors.bg};
@@ -24,7 +25,12 @@ const MainHeader = styled.header`
   position: relative;
 
   .logo {
-    height: 5rem;
+    max-height: 100px;
+  }
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    .logo {
+      max-height: 70px;
+    }
   }
 `;
 export default Header;
