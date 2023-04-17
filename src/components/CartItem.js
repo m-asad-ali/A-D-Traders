@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CartAmountToggle from "./CartAmountToggle";
 import { FaTrash } from "react-icons/fa";
 import { useCartContext } from "../context/cart_context";
