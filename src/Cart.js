@@ -4,10 +4,14 @@ import CartItem from "./components/CartItem";
 import { NavLink } from "react-router-dom";
 import { Button } from "./styles/Button";
 import OrderAmount from "./components/OrderAmount";
+import { useEffect } from "react";
 // import { useAuth0 } from "@auth0/auth0-react";
 
 const Cart = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    document.title = "Cart - A&D Traders";
+    window.scrollTo(0, 0);
+  }, []);
 
   const { cart, clearCart } = useCartContext();
   //

@@ -13,7 +13,10 @@ import AddToCart from "./components/AddToCart";
 // const API = "https://api.pujakaitem.com/api/products";
 
 const SingleProduct = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    document.title = "Product - A&D Traders";
+    window.scrollTo(0, 0);
+  }, []);
   const { getSingleProduct, isSingleLoading, singleProduct } =
     useProductContext();
 

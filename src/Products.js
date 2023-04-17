@@ -2,9 +2,13 @@ import styled from "styled-components";
 import FilterSection from "./components/FilterSection";
 import ProductList from "./components/ProductList";
 import Sort from "./components/Sort";
+import { useEffect } from "react";
 
 const Products = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    document.title = "Products - A&D Traders";
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Wrapper>
       <div className="container grid grid-filter-column">

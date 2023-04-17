@@ -4,7 +4,10 @@ import { useEffect } from "react";
 import AboutData from "./components/AboutData";
 
 const About = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    document.title = "About Us - A&D Traders";
+    window.scrollTo(0, 0);
+  }, []);
   const { myName } = useProductContext();
 
   const data = {

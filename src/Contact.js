@@ -1,8 +1,12 @@
 // import { useAuth0 } from "@auth0/auth0-react";
 import styled from "styled-components";
+import { useEffect } from "react";
 
 const Contact = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    document.title = "Contact Us - A&D Traders";
+    window.scrollTo(0, 0);
+  }, []);
   // const { isAuthenticated, user } = useAuth0();
 
   const Wrapper = styled.section`

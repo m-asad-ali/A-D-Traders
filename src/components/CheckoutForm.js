@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useCartContext } from "../context/cart_context";
 import styled from "styled-components";
 import OrderAmount from "./OrderAmount";
@@ -7,7 +7,11 @@ import { NavLink } from "react-router-dom";
 import { Country, State, City } from "country-state-city";
 
 const CheckoutForm = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    document.title = "CheckOut - A&D Traders";
+    window.scrollTo(0, 0);
+  }, []);
+
   const [canPay, setCanPay] = useState(true); // to check if the form is filled, make it false when deploy
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");

@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 const PrivacyPolicy = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    document.title = "Privacy Policy - A&D Traders";
+    window.scrollTo(0, 0);
+  }, []);
+
   // window.scrollTo({ top: 0, left: 0 });
 
   return (

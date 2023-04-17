@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useCartContext } from "../context/cart_context";
 
 const OrderConfirmation = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    document.title = "Order Confirmed - A&D Traders";
+    window.scrollTo(0, 0);
+  }, []);
   const { total_price, order_no } = useCartContext();
 
   const date = new Date();
