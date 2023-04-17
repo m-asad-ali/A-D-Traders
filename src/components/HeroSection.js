@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles/Button";
-import heroImg from "../assets/hero.jpg";
+// import heroImg from "../assets/hero.jpg";
 
 const HeroSection = ({ myData, type }) => {
   const { name } = myData;
