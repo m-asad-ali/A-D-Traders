@@ -18,7 +18,7 @@ const initialState = {
   total_item: "",
   total_price: "",
   order_no: 1435,
-  shipping_fee: 50000,
+  shipping_fee: 0,
 };
 
 const CartProvider = ({ children }) => {

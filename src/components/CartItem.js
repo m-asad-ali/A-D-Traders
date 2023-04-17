@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import FormatPrice from "../Helpers/FormatPrice";
 import CartAmountToggle from "./CartAmountToggle";
 import { FaTrash } from "react-icons/fa";
 import { useCartContext } from "../context/cart_context";
@@ -29,14 +28,16 @@ const CartItem = ({ id, name, image, color, price, amount }) => {
             <p>color:</p>
             <div
               className="color-style"
-              style={{ backgroundColor: color, color: color }}></div>
+              style={{ backgroundColor: color, color: color }}
+            ></div>
           </div>
         </div>
       </div>
       {/* price   */}
       <div className="cart-hide">
         <p>
-          <FormatPrice price={price} />
+          {/* <FormatPrice price={price} /> */}
+          {price}
         </p>
       </div>
 
@@ -50,7 +51,8 @@ const CartItem = ({ id, name, image, color, price, amount }) => {
       {/* //Subtotal */}
       <div className="cart-hide">
         <p>
-          <FormatPrice price={price * amount} />
+          {/* <FormatPrice price={price * amount} /> */}
+          {price * amount}
         </p>
       </div>
 

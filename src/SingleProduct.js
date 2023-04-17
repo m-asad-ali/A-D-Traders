@@ -62,13 +62,10 @@ const SingleProduct = () => {
             <Star stars={stars} reviews={reviews} />
 
             <p className="product-data-price">
-              MRP:
-              <del>
-                <FormatPrice price={price + 250000} />
-              </del>
+              $<del>{price + 1}</del>
             </p>
             <p className="product-data-price product-data-real-price">
-              Deal of the Day: <FormatPrice price={price} />
+              Deal of the Day: ${price}
             </p>
             <p>{description}</p>
             <div className="product-data-warranty">
@@ -79,7 +76,7 @@ const SingleProduct = () => {
 
               <div className="product-warranty-data">
                 <TbReplace className="warranty-icon" />
-                <p>30 Days Replacement</p>
+                <p>7 Days Replacement</p>
               </div>
 
               {/* <div className="product-warranty-data">
@@ -89,7 +86,7 @@ const SingleProduct = () => {
 
               <div className="product-warranty-data">
                 <MdSecurity className="warranty-icon" />
-                <p>2 Year Warranty </p>
+                <p>1 Year Warranty </p>
               </div>
             </div>
 

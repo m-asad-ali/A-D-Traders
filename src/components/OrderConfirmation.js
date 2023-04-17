@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { useCartContext } from "../context/cart_context";
-import FormatPrice from "../Helpers/FormatPrice";
 
 const OrderConfirmation = () => {
   const { total_price, order_no } = useCartContext();
@@ -18,7 +17,8 @@ const OrderConfirmation = () => {
         <p className="order-date">Date: {formattedDate}</p>
         <p className="shipment-method">Shipment Method: Credit/Bank Card</p>
         <p className="total-amount">
-          Total Amount: <FormatPrice price={total_price} />
+          {/* Total Amount: <FormatPrice price={total_price} /> */}
+          Total Amount: {total_price}
         </p>
       </div>
     </Wrapper>

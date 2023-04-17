@@ -148,6 +148,7 @@ const cartReducer = (state, action) => {
 
         accum.total_item += amount;
         accum.total_price += price * amount;
+        accum.total_price = parseFloat(accum.total_price.toFixed(2));
 
         return accum;
       },
