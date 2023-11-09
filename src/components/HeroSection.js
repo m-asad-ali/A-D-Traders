@@ -1,35 +1,38 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles/Button";
+// import heroImg from "../assets/hero.jpg";
 
-const HeroSection = ({ myData }) => {
+const HeroSection = ({ myData, type }) => {
   const { name } = myData;
 
   return (
     <Wrapper>
       <div className="container">
         <div className="grid grid-two-column">
-          <div className="hero-section">
-            <p>Welcome to</p>
-            <h1>{name}</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-              atque temporibus veniam doloribus libero ad error omnis voluptates
-              animi! Suscipit sapiente.
-            </p>
-            <NavLink>
-              <Button>Show Now</Button>
-            </NavLink>
+          <div className="hero-section-data">
+            <p className="intro-data">Welcome to</p>
+            <h1> {name} </h1>
+            {type !== "about" && (
+              <>
+                <p>
+                  we are an online retailer that offers a wide selection of
+                  high-quality products at competitive prices. Our mission is to
+                  provide our customers with a convenient, hassle-free shopping
+                  experience and exceptional customer service.
+                </p>
+                <NavLink to={"products"}>
+                  <Button>show now</Button>
+                </NavLink>
+              </>
+            )}
           </div>
-          <div className="hero-section-image">
+          {/* our homepage image  */}
+          {/* <div className="hero-section-image">
             <figure>
-              <img
-                src="images/hero.jpg"
-                alt="Hero Section Images"
-                className="img-style"
-              />
+              <img src={heroImg} alt="hero-section" className="img-style" />
             </figure>
-          </div>
+          </div> */}
         </div>
       </div>
     </Wrapper>
@@ -38,22 +41,27 @@ const HeroSection = ({ myData }) => {
 
 const Wrapper = styled.section`
   padding: 12rem 0;
+
   img {
     min-width: 10rem;
     height: 10rem;
   }
+
   .hero-section-data {
     p {
       margin: 2rem 0;
     }
+
     h1 {
       text-transform: capitalize;
       font-weight: bold;
     }
+
     .intro-data {
       margin-bottom: 0;
     }
   }
+
   .hero-section-image {
     width: 100%;
     height: auto;
@@ -63,6 +71,7 @@ const Wrapper = styled.section`
   }
   figure {
     position: relative;
+
     &::after {
       content: "";
       width: 60%;
@@ -78,10 +87,12 @@ const Wrapper = styled.section`
     width: 100%;
     height: auto;
   }
+
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     .grid {
       gap: 10rem;
     }
+
     figure::after {
       content: "";
       width: 50%;

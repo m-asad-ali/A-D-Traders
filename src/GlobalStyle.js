@@ -96,7 +96,6 @@ ${"" /* resuable code section  */}
 
 .grid-two-column {
   grid-template-columns: repeat(2, 1fr);
-
 }
 
 .grid-three-column {
@@ -141,17 +140,18 @@ input, textarea{
     color: ${({ theme }) => theme.colors.black};
     padding: 1.6rem 2.4rem;
     border: 1px solid ${({ theme }) => theme.colors.border};
-    text-transform: uppercase;
+    text-transform: capitalize;
    box-shadow: ${({ theme }) => theme.colors.shadowSupport};
 }
     input[type="submit"]{
-    max-width: 16rem;
+    ${"" /* max-width: 16rem; */}
     margin-top: 2rem;
     background-color: ${({ theme }) => theme.colors.btn};
     color: ${({ theme }) => theme.colors.white};
     padding: 1.4rem 2.2rem;
     border-style: solid;
     border-width: .1rem;
+    border-radius: 30px;
     text-transform: uppercase;
     font-size: 1.8rem;
     cursor: pointer;

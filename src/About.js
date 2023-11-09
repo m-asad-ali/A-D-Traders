@@ -1,7 +1,13 @@
 import HeroSection from "./components/HeroSection";
-import { useProductContext } from "./context/productcontext";
+import { useProductContext } from "./context/productcontex";
+import { useEffect } from "react";
+import AboutData from "./components/AboutData";
 
 const About = () => {
+  useEffect(() => {
+    document.title = "About Us - A&D Traders";
+    window.scrollTo(0, 0);
+  }, []);
   const { myName } = useProductContext();
 
   const data = {
@@ -11,7 +17,8 @@ const About = () => {
   return (
     <>
       {myName}
-      <HeroSection myData={data} />
+      <HeroSection myData={data} type="about" />
+      <AboutData />
     </>
   );
 };

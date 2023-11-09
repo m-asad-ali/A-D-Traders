@@ -1,20 +1,22 @@
 import { useEffect } from "react";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
-import { useProductContext } from "./context/productcontext";
+import { useProductContext } from "./context/productcontex";
 import PageNavigation from "./components/PageNavigation";
 import MyImage from "./components/MyImage";
 import { Container } from "./styles/Container";
-import Star from "./components/Star";
-import AddToCart from "./components/AddToCart";
-// import FormatPrice from "./Helpers/FormatPrice";
 import { MdSecurity } from "react-icons/md";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
+import Star from "./components/Star";
+import AddToCart from "./components/AddToCart";
 
-const API = "https://api.pujakaitem.com/api/products";
-// const API = "https://fakestoreapi.com/products";
+// const API = "https://api.pujakaitem.com/api/products";
 
 const SingleProduct = () => {
+  useEffect(() => {
+    document.title = "Product - A&D Traders";
+    window.scrollTo(0, 0);
+  }, []);
   const { getSingleProduct, isSingleLoading, singleProduct } =
     useProductContext();
 
@@ -31,10 +33,12 @@ const SingleProduct = () => {
     stars,
     reviews,
     image,
+    size,
   } = singleProduct;
 
   useEffect(() => {
-    getSingleProduct(`${API}?id=${id}`);
+    // getSingleProduct(`${API}?id=${id}`);
+    getSingleProduct(id);
   }, []);
 
   if (isSingleLoading) {
@@ -44,6 +48,8 @@ const SingleProduct = () => {
   return (
     <Wrapper>
       <PageNavigation title={name} />
+      {console.log("name", name)}
+      {console.log("Single Product", singleProduct)}
       <Container className="container">
         <div className="grid grid-two-column">
           {/* product Images  */}
@@ -51,41 +57,32 @@ const SingleProduct = () => {
             <MyImage imgs={image} />
           </div>
 
-          {/* product dAta  */}
+          {/* product data  */}
           <div className="product-data">
             <h2>{name}</h2>
             <Star stars={stars} reviews={reviews} />
-            {/* pass rating object which has rate and count */}
 
-            {/* <p className="product-data-price">
-              MRP:
-              <del>
-                <FormatPrice price={price + 250000} />
-              </del>
+            <p className="product-data-price">
+              $<del>{price + 1}</del>
             </p>
             <p className="product-data-price product-data-real-price">
-              Deal of the Day: <FormatPrice price={price} />
-            </p> */}
+              Deal of the Day: ${price}
+            </p>
             <p>{description}</p>
             <div className="product-data-warranty">
               <div className="product-warranty-data">
                 <TbTruckDelivery className="warranty-icon" />
-                <p>Free Delivery</p>
+                <p>Fast Delivery</p>
               </div>
 
               <div className="product-warranty-data">
                 <TbReplace className="warranty-icon" />
-                <p>30 Days Replacement</p>
-              </div>
-
-              <div className="product-warranty-data">
-                <TbTruckDelivery className="warranty-icon" />
-                <p>A&D Delivered </p>
+                <p>7 Days Replacement</p>
               </div>
 
               <div className="product-warranty-data">
                 <MdSecurity className="warranty-icon" />
-                <p>2 Year Warranty </p>
+                <p>1 Year Warranty </p>
               </div>
             </div>
 
@@ -93,14 +90,24 @@ const SingleProduct = () => {
               <p>
                 Available:
                 <span> {stock > 0 ? "In Stock" : "Not Available"}</span>
+                {/* {console.log("Stock", stock)} */}
               </p>
               <p>
-                ID : <span> {id} </span>
+                Category :{" "}
+                <span style={{ textTransform: "capitalize" }}>
+                  {" "}
+                  {category}{" "}
+                </span>
               </p>
               <p>
-                Brand :<span> {company} </span>
+                Size : <span> {size} </span>
+              </p>
+              <p>
+                Brand :
+                <span style={{ textTransform: "capitalize" }}> {company} </span>
               </p>
             </div>
+            <hr />
             {stock > 0 && <AddToCart product={singleProduct} />}
           </div>
         </div>
@@ -113,16 +120,19 @@ const Wrapper = styled.section`
   .container {
     padding: 9rem 0;
   }
+
   .product_images {
     display: flex;
     align-items: center;
   }
+
   .product-data {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     gap: 2rem;
+
     .product-data-warranty {
       width: 100%;
       display: flex;
@@ -130,8 +140,10 @@ const Wrapper = styled.section`
       align-items: center;
       border-bottom: 1px solid #ccc;
       margin-bottom: 1rem;
+
       .product-warranty-data {
         text-align: center;
+
         .warranty-icon {
           background-color: rgba(220, 220, 220, 0.5);
           border-radius: 50%;
@@ -145,6 +157,7 @@ const Wrapper = styled.section`
         }
       }
     }
+
     .product-data-price {
       font-weight: bold;
     }
@@ -156,10 +169,12 @@ const Wrapper = styled.section`
       flex-direction: column;
       gap: 1rem;
       font-size: 1.8rem;
+
       span {
         font-weight: bold;
       }
     }
+
     hr {
       max-width: 100%;
       width: 90%;
@@ -168,11 +183,13 @@ const Wrapper = styled.section`
       color: red;
     }
   }
+
   .product-images {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .page_loading {
     font-size: 3.2rem;
     display: flex;
